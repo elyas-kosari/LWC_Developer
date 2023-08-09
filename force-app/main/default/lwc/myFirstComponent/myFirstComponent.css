@@ -1,0 +1,9 @@
+.container {
+  background-color: white;
+  padding: 20px;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 700;
+}

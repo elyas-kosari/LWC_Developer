@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Course Navigator">
+      {courseName} has {instructor} as the instructor.
+
+      <p>These two will overwrite the values in the child</p>
+      <c-course course-name="Apex" course-size="7" instructor="Robby" start-date="9/8/2021"></c-course>
+      <c-course course-name={courseName} course-size="8" instructor={instructor}></c-course>
+      
+      <p>This last element takes whatever values the child had</p>
+      <c-course></c-course>
+
+
+      <c-course course-name="Platform App Builder"></c-course>
+    </lightning-card>
+</template>
