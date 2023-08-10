@@ -2,8 +2,10 @@
     <lightning-card title="Apex">
       <div class="slds-var-p-around_medium">
         <lightning-button variant="brand" onclick={handleAccounts} label="Click Me"></lightning-button>
-        <template for:each={accountList.data} for:item="acc">
-          <p key={acc.Id}>{acc.Name} has the annual revenue of ${acc.AnnualRevenue}</p>
+        <template lwc:if={disabled}>
+          <template for:each={accountList.data} for:item="acc">
+            <p key={acc.Id}>{acc.Name} has the annual revenue of ${acc.AnnualRevenue}</p>
+          </template>
         </template>
       </div>
     </lightning-card>
