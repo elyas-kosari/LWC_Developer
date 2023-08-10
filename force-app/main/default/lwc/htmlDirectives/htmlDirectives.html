@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="HTML Directives">
+      <div class="slds-var-p-around_medium">
+        <template lwc:if={accountId}>
+
+          <template for:each={studentList} for:item="stu">
+            <p key={stu.studentId}>Id: {stu.studentId}, Name: {stu.studentName}</p>
+          </template>
+          
+        </template>
+      </div>
+    </lightning-card>
+</template>
