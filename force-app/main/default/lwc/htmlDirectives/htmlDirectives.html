@@ -3,10 +3,26 @@
       <div class="slds-var-p-around_medium">
         <template lwc:if={accountId}>
 
+          <!-- for (let stu of studentList) -->
           <template for:each={studentList} for:item="stu">
             <p key={stu.studentId}>Id: {stu.studentId}, Name: {stu.studentName}</p>
           </template>
           
+           <!-- for (let stu of studentList) -->
+          <template iterator:stu={studentList}>
+            <template lwc:if={stu.first}>
+              <p key={stu.value.studentId}><b>Id: {stu.value.studentId}, Name: {stu.value.studentName}</b></p>
+            </template>
+            <template lwc:elseif={stu.last}>
+              <p key={stu.value.studentId}><b>Id: {stu.value.studentId}, Name: {stu.value.studentName}</b></p>
+            </template>
+            <template lwc:else>
+              <p key={stu.value.studentId}>Id: {stu.value.studentId}, Name: {stu.value.studentName}</p>
+            </template>
+            
+            
+          </template>
+
         </template>
       </div>
     </lightning-card>
