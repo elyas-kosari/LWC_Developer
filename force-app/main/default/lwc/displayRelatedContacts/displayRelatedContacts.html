@@ -1,7 +1,10 @@
 <template>
     <lightning-card title="UI Record API">
       <div class="slds-var-p-around_medium">
-        <!-- {contact.fields.FirstName.value}, {contact.fields.LastName.value}, {contact.fields.Phone.value}, {contact.fields.Email.value} -->
+        <p><strong>Full Name: </strong>{contact.firstName} {contact.lastName}</p>
+        <p><strong>Phone Number: </strong>{contact.phone}</p>
+        <p><strong>Email Address: </strong>{contact.email}</p>
+        <p><strong>Birth Date: </strong>{contact.birthdate}</p>
       </div>
     </lightning-card>
 </template>
