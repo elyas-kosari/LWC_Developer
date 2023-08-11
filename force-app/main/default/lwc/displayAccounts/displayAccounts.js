@@ -3,6 +3,12 @@ import getAccounts from "@salesforce/apex/AccountData.getAccounts";
 
 export default class DisplayAccounts extends LightningElement {
 
+  colConfigs = [
+    {label: "Account Name", fieldName: "name", type: "text"},
+    {label: "Annual Revenue (USD)", fieldName: "aRevenue", type: "currency"},
+    {label: "Website", fieldName: "website", type: "url"},
+  ];
+
   disabled = false;
   annualRevenue = 30000000;
   accountList = [];
@@ -18,8 +24,9 @@ export default class DisplayAccounts extends LightningElement {
     if (data) { // if (result.data)
       this.accountList = data.map(element => ({
         accountId: element.Id,
-        label: element.Name,
-        value: element.AnnualRevenue
+        name: element.Name,
+        website: element.Website,
+        aRevenue: element.AnnualRevenue,
     })); // this.accountList = result.data;
       this.error = undefined;
     } else if (error) { // else if (result.error)

@@ -3,9 +3,19 @@
       <div class="slds-var-p-around_medium">
         <lightning-button variant="brand" onclick={handleAccounts} label="Click Me"></lightning-button>
         <template lwc:if={disabled}>
-          <template for:each={accountList} for:item="acc">
-            <p key={acc.Id}>{acc.label} has the annual revenue of ${acc.value}</p>
-          </template>
+          <!-- <table border="1">
+            <thead>
+              <th>Account Name</th>
+              <th>Annual Revenue (USD)</th>
+            <template for:each={accountList} for:item="acc">
+              <tr key={acc.Id}>
+                <td>{acc.name}</td>
+                <td>{acc.aRevenue}</td>
+              </tr>
+            </template>
+          </table> -->
+
+          <lightning-datatable key-field="accountId" data={accountList} columns={colConfigs}></lightning-datatable>
         </template>
       </div>
     </lightning-card>
