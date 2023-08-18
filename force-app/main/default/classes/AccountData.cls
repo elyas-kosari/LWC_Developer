@@ -5,4 +5,8 @@ public with sharing class AccountData {
         return [SELECT Id, Name, AnnualRevenue, Website FROM Account WHERE AnnualRevenue >= :annualRevenue];
     }
 
+    @AuraEnabled
+    public static Boolean deleteAccounts(List<Id> idList){
+        Database.delete([SELECT Id FROM Account WHERE Id IN :idList], false);
+    }
 }

@@ -1,5 +1,7 @@
 import { LightningElement, wire } from 'lwc';
 import getAccounts from "@salesforce/apex/AccountData.getAccounts";
+import deleteAccounts from "@salesforce/apex/AccountData.deleteAccounts";
+import { refreshApex } from "@salesforce/apex";
 
 export default class DisplayAccounts extends LightningElement {
 
@@ -38,4 +40,7 @@ export default class DisplayAccounts extends LightningElement {
   handleAccounts() {
     this.disabled = !this.disabled;
   }
+
+  
+
 }
